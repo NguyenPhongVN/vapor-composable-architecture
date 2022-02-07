@@ -1,5 +1,5 @@
-  // swift-tools-version:5.5
-  // The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:5.3
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
@@ -17,16 +17,14 @@ let package = Package(
       targets: ["ComposableArchitecture"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/OpenCombine/OpenCombine.git", from: "0.13.0"),
+    .package(url: "https://github.com/TokamakUI/Tokamak.git", from: "0.9.0"),
     .package(url: "https://github.com/pointfreeco/swift-case-paths", from: "0.8.0"),
   ],
   targets: [
     .target(
       name: "ComposableArchitecture",
       dependencies: [
-        "OpenCombine",
-        .product(name: "OpenCombineFoundation", package: "OpenCombine"),
-        .product(name: "OpenCombineDispatch", package: "OpenCombine"),
+        .product(name: "TokamakDOM", package: "Tokamak"),
         .product(name: "CasePaths", package: "swift-case-paths"),
       ]),
     .testTarget(
